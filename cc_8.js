@@ -78,3 +78,17 @@ function filterLargeTransactions(transactions, filterFunction) {
 }
 console.log(filterLargeTransactions(transactions, amount => amount > 1000)); // output: [1500, 3200, 2500]
 
+
+// Task 7 - Shopping Cart Tracker
+function createCartTracker() {
+    let totalCartValue = 0;
+    return function(price) {
+        totalCartValue += price;
+        return `Total Cart Value: $${totalCartValue}`;
+    };
+};
+
+let cart = createCartTracker();
+console.log(cart(20)); // output: "Total Cart Value: $20"
+console.log(cart(35)); // output: "Total Cart Value: $55"
+
