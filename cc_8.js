@@ -51,13 +51,22 @@ function calculateRentalCost(days, carType, insurance = false) {
         default:
             return "Invalid car type";
     }
-    let totalCost = rentalCostPerDay * days;  // Calculate the total cost without insurance
+    let totalCost = rentalCostPerDay * days;  // Calculating total cost without insurance
     if (insurance) { 
         totalCost += 20 * days; // Add insurance cost if applicable
     }
     return "Total Rental Cost: $" + totalCost; // Return  total rental cost
 }
 
-//Test data
 console.log(calculateRentalCost(3, "Economy", true)); // output: "Total Rental Cost: $180"
 console.log(calculateRentalCost(5, "Luxury", false)); // output: "Total Rental Cost: $500"
+
+
+// Task 5 - Loan Payment Calculation
+function calculateLoanPayment(principal, rate, time) {
+    const totalPayment = principal + (principal * rate * time); // Calculating total loan payment 
+    return "Total Payment: $" + totalPayment.toFixed(2);  // Return with 2 decimal places
+}
+console.log(calculateLoanPayment(1000, 0.05, 2)); // output: "Total Payment: $1100.00"
+console.log(calculateLoanPayment(5000, 0.07, 3)); // output: "Total Payment: $6050.00"
+
